@@ -377,75 +377,11 @@ footer {
     }
 
     .main h2 {
-        font-size: 1.8em;
+        font-size: 2em;
     }
 
     .changing_text {
-        font-size: 2.2em;
-    }
-
-    .card {
-        width: calc(100% - 20px);
-        margin-bottom: 20px;
-    }
-
-    .projects .content {
-        gap: 10px;
-    }
-
-    .card h5 {
-        font-size: 1.3em;
-        padding: 15px;
-    }
-
-    .cardLayer {
-        padding: 15px;
-    }
-
-    .cardLayer p {
-        font-size: 0.95em;
-        line-height: 1.4;
-    }
-
-    header {
-        padding: 8px 0;
-    }
-
-    .logo img {
-        width: 45px;
-    }
-
-    .container-title {
-        font-size: 2.2em;
-        margin-bottom: 30px;
-    }
-
-    .skill {
-        width: 100%;
-    }
-
-    .container {
-        padding: 0 15px;
-    }
-
-    .projects, .skills, .contact {
-        padding: 60px 0;
-    }
-
-    .src {
-        padding: 6px 12px;
-        font-size: 0.9em;
-    }
-
-    form input,
-    form textarea {
-        padding: 12px;
-        font-size: 14px;
-    }
-
-    form button {
-        padding: 10px 20px;
-        font-size: 14px;
+        font-size: 2.5em;
     }
 }
 
