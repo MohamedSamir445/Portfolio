@@ -3,8 +3,8 @@
 :root {
     --primary-color: #4a90e2;
     --secondary-color: #f31270;
-    --text-color: #333;
-    --background-color: #f39c12;
+    --text-color: #fff;
+    --background-color: rgba(50, 50, 50, 1);
     --card-bg-color: rgba(255, 255, 255, 0.1);
     --card-hover-color: rgba(255, 255, 255, 0.2);
 }
@@ -16,11 +16,11 @@
     border: 0;
     box-sizing: border-box;
     scroll-behavior: smooth;
+    color: var(--text-color);
 }
 
 body {
-    background: url(images/devops-bg.jpg) no-repeat center center fixed;
-    background-size: cover;
+    background-color: var(--background-color);
     color: var(--text-color);
     line-height: 1.6;
     min-height: 100vh;
@@ -35,11 +35,11 @@ body {
 }
 
 header {
-    background-color: rgb(245, 249, 251);
+    background-color: rgba(255, 255, 255, 0.1);
     position: fixed;
     width: 100%;
     z-index: 1000;
-    padding: 20px 0;
+    padding: 10px 0; /* Reduced padding to decrease height */
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -61,19 +61,39 @@ header {
 
 .navigation ul li {
     margin: 0 15px;
+    position: relative; /* Add this */
 }
 
 .navigation ul a {
-    color: #fff;
+    color: var(--text-color);
     text-decoration: none;
     padding: 10px 15px;
     transition: all 0.3s ease;
     text-transform: uppercase;
     font-weight: 600;
+    position: relative;
 }
 
-.navigation ul a:hover {
-    color: var(--primary-color);
+/* Remove the previous hover effect */
+.navigation ul a::before {
+    content: none;
+}
+
+/* Add this new rule for the line effect */
+.navigation ul a::after {
+    content: '';
+    position: absolute;
+    bottom: -7px; /* Adjust this value to position the line at the bottom of the header */
+    left: 50%;
+    width: 0;
+    height: 2px; /* Adjust the height of the line as needed */
+    background-color: var(--text-color);
+    transition: width 0.3s ease, left 0.3s ease;
+}
+
+.navigation ul a:hover::after {
+    width: 100%;
+    left: 0;
 }
 
 .main {
@@ -83,7 +103,7 @@ header {
     justify-content: center;
     text-align: center;
     color: #f30d3f;
-    background-color: rgba(11, 11, 11, 0);
+    background-color: transparent;
     padding: 20px;
 }
 
@@ -103,6 +123,13 @@ header {
     font-size: 3em;
     font-weight: bold;
     color: var(--secondary-color);
+    position: relative; /* Add this */
+}
+
+@keyframes blink {
+	0% { opacity: 0; }
+	50% { opacity: 1; }
+	100% { opacity: 0; }
 }
 
 .my_work_btn a {
@@ -114,6 +141,7 @@ header {
     text-decoration: none;
     font-weight: bold;
     transition: all 0.3s ease;
+    margin-bottom: 10px; /* Add this to create space below the button */
 }
 
 .my_work_btn a:hover {
@@ -123,7 +151,7 @@ header {
 }
 
 .projects {
-    background-color: rgba(255, 255, 255, 0.9);
+    background-color: transparent;
     padding: 80px 0;
 }
 
@@ -132,6 +160,8 @@ header {
     text-align: center;
     margin-bottom: 40px;
     color: var(--primary-color);
+    position: relative; /* Added to allow absolute positioning of pseudo-element */
+    z-index: 1; /* Ensure the title is above the header border */
 }
 
 .projects .content {
@@ -149,6 +179,8 @@ header {
     transition: all 0.3s ease;
     width: calc(33.333% - 20px);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    position: relative; /* Added to allow absolute positioning of source button */
+    padding-bottom: 60px; /* Added to make space for the source button */
 }
 
 .card:hover {
@@ -182,6 +214,9 @@ header {
     text-decoration: none;
     font-weight: bold;
     transition: all 0.3s ease;
+    position: absolute;
+    bottom: 20px;
+    left: 5%;
 }
 
 .src:hover {
@@ -189,7 +224,7 @@ header {
 }
 
 .skills {
-    background-color: rgba(0, 0, 0, 0.8);
+    background-color: transparent;
     padding: 80px 20px;
     color: #fff;
     text-align: center;
@@ -205,7 +240,7 @@ header {
 .skill {
     width: 45%;
     margin-bottom: 30px;
-    background-color: rgba(255, 255, 255, 0.1);
+    background-color: var(--card-bg-color);
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
@@ -237,36 +272,61 @@ header {
 }
 
 .contact {
-    background-color: rgba(255, 255, 255, 0.9);
+    width: 100%;
+    background-color: transparent;
     padding: 80px 0;
+}
+
+.contact-content {
+    max-width: 70%; /* Adjust this value as needed */
+    margin: 0 auto;
+    width: 100%;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
 }
 
 form input,
 form textarea {
     width: 100%;
-    padding: 10px;
+    padding: 15px;
     margin-bottom: 20px;
-    border: 1px solid #ddd;
+    border: 1px solid rgba(255, 255, 255, 0.1);
     border-radius: 5px;
+    background-color: rgba(255, 255, 255, 0.05);
+    color: var(--text-color);
+    font-size: 16px;
+}
+
+form textarea {
+    min-height: 150px;
+    resize: vertical;
 }
 
 form button {
+    align-self: flex-start;
     background-color: var(--primary-color);
-    color: #fff;
+    color: var(--text-color);
     padding: 12px 24px;
     border: none;
     border-radius: 5px;
     cursor: pointer;
     transition: all 0.3s ease;
+    font-size: 16px;
+    font-weight: bold;
 }
 
 form button:hover {
     background-color: #3a7bc0;
+    transform: translateY(-3px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 footer {
     margin-top: auto;
-    background-color: #333;
+    background-color: rgba(0, 0, 0, 0.5);
     color: #fff;
     text-align: center;
     padding: 20px 0;
@@ -283,13 +343,25 @@ footer {
     margin-top: 10px;
 }
 
-.social_icons a {
+.social_icons a,
+.social_icons i {
     color: #fff;
-    font-size: 1.5em;
+    font-size: 1.1em;
     transition: all 0.3s ease;
 }
 
-.social_icons a:hover {
+.social_icons a:hover,
+.social_icons i:hover {
+    color: var(--primary-color);
+    transform: translateY(-1px);
+}
+
+.social_icons .whatsapp {
+    font-size: 1em;
+    margin-right: 5px;
+}
+
+.social_icons .whatsapp:hover {
     color: var(--primary-color);
 }
 
@@ -310,5 +382,120 @@ footer {
 
     .changing_text {
         font-size: 2.5em;
+    }
+}
+
+/* Mobile menu styles */
+.mobile-menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    z-index: 1001;
+}
+
+.mobile-menu-toggle span {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background-color: var(--text-color);
+    margin: 5px 0;
+    transition: 0.3s;
+}
+
+.mobile-menu-backdrop {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.mobile-menu {
+    display: none;
+    position: fixed;
+    top: 0;
+    right: -250px;
+    width: 250px;
+    height: 100%;
+    background-color: var(--background-color);
+    z-index: 1000;
+    transition: right 0.3s ease;
+    overflow-y: auto;
+}
+
+.mobile-menu nav {
+    padding: 60px 20px 20px;
+}
+
+.mobile-menu ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.mobile-menu ul li {
+    margin-bottom: 20px;
+    opacity: 0;
+    transform: translateX(20px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.mobile-menu ul a {
+    color: var(--text-color);
+    text-decoration: none;
+    font-size: 18px;
+    display: block;
+    padding: 10px 0;
+    transition: color 0.3s ease;
+}
+
+.mobile-menu ul a:hover {
+    color: var(--primary-color);
+}
+
+/* Mobile menu open state */
+.mobile-menu-open .mobile-menu-backdrop {
+    display: block;
+    opacity: 1;
+}
+
+.mobile-menu-open .mobile-menu {
+    right: 0;
+}
+
+.mobile-menu-open .mobile-menu ul li {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.mobile-menu-open .mobile-menu-toggle span:nth-child(1) {
+    transform: rotate(-45deg) translate(-5px, 6px);
+}
+
+.mobile-menu-open .mobile-menu-toggle span:nth-child(2) {
+    opacity: 0;
+}
+
+.mobile-menu-open .mobile-menu-toggle span:nth-child(3) {
+    transform: rotate(45deg) translate(-5px, -6px);
+}
+
+@media (max-width: 768px) {
+    .navigation {
+        display: none;
+    }
+
+    .mobile-menu-toggle {
+        display: block;
+    }
+
+    .mobile-menu {
+        display: block;
     }
 }

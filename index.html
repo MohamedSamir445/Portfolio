@@ -6,13 +6,14 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="images/logo.png">
     <link defer rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
     <script defer src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.12/typed.min.js"></script>
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
     <script defer src="script.js"></script>
     <script defer src="/_vercel/insights/script.js"></script>
     <script defer src="/_vercel/speed-insights/script.js"></script>
-    <title>M O H A M E D  S A M I R</title>
+    <title>M O H A M E D &nbsp; S A M I R</title>
 </head>
 
 <body>
@@ -29,7 +30,23 @@
                 <div class="navHoverBackground"></div>
             </ul>
         </nav>
+        <button class="mobile-menu-toggle" aria-label="Toggle mobile menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
     </header>
+
+    <div class="mobile-menu-backdrop"></div>
+    <div class="mobile-menu">
+        <nav>
+            <ul>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </div>
 
     <section class="main container">
         <div>
@@ -50,82 +67,78 @@
     </section>
 
     <section id="projects" class="projects container">
-        <div class="container-object">
-            <h4 class="container-title">PROJECTS</h4>
-            <div class="content">
-                <div id="ci" class="card">
-                    <h5>KastenOps<span class="cardHint"></span></h5>
-                    <div class="cardLayer">
-                        <p>Description: KastenOps streamlines the deployment and administration of Kasten, a Kubernetes-native data management
-                            platform, for simplified backup, restore, and disaster recovery workflows.</p>
-                        <a title="Source code" class="src" href="https://github.com/MohamedSamir445/KastenOps" target="_blank"><strong>source</strong></a>
-                    </div>
+        <h4 class="container-title">PROJECTS</h4>
+        <div class="content">
+            <div class="card">
+                <h5>KastenOps</h5>
+                <div class="cardLayer">
+                    <p>Description: KastenOps streamlines the deployment and administration of Kasten, a Kubernetes-native data management platform, for simplified backup, restore, and disaster recovery workflows.</p>
                 </div>
-                <div id="iac" class="card">
-                    <h5>Comprehensive System Monitoring <span class="cardHint">with Prometheus and Grafana</span></h5>
-                    <div class="cardLayer">
-                        <p>Implemented Prometheus and Grafana for robust monitoring and visualization, including integration of
-                            Windows servers using Windows Exporter and pre-built Grafana dashboards.
-                            </p>
-                        <a title="Source code" class="src" href="https://github.com/MohamedSamir445/Monitor-Windows-Server-Using-PrometheusGrafana" target="_blank"><strong>source</strong></a>
-                    </div>
+                <a title="Source code" class="src" href="https://github.com/MohamedSamir445/KastenOps" target="_blank"><strong>source</strong></a>
+            </div>
+            
+            <div class="card">
+                <h5>Comprehensive System Monitoring <span>with Prometheus and Grafana</span></h5>
+                <div class="cardLayer">
+                    <p>Implemented Prometheus and Grafana for robust monitoring and visualization, including integration of Windows servers using Windows Exporter and pre-built Grafana dashboards.</p>
                 </div>
-                <div id="mon" class="card">
-                    <h5>Comprehensive CI/CD Pipeline<span class="cardHint">with Jenkins, Ansible, Docker, and Kubernetes</span></h5>
-                    <div class="cardLayer">
-                        <p>Developed a multi-server CI/CD pipeline integrating Jenkins, Ansible, Docker, and Kubernetes, automating the build, deployment, and scaling processes for a web application. This setup ensured efficient and seamless continuous integration and delivery, enhancing deployment reliability and scalability.</p>
-                        <a title="Source code" class="src" href="https://github.com/MohamedSamir445/Cafe-App.git" target="_blank"><strong>source</strong></a>
-                    </div>
+                <a title="Source code" class="src" href="https://github.com/MohamedSamir445/Monitor-Windows-Server-Using-PrometheusGrafana" target="_blank"><strong>source</strong></a>
+            </div>
+            
+            <div class="card">
+                <h5>Comprehensive CI/CD Pipeline<span>with Jenkins, Ansible, Docker, and Kubernetes</span></h5>
+                <div class="cardLayer">
+                    <p>Developed a multi-server CI/CD pipeline integrating Jenkins, Ansible, Docker, and Kubernetes, automating the build, deployment, and scaling processes for a web application. This setup ensured efficient and seamless continuous integration and delivery, enhancing deployment reliability and scalability.</p>
                 </div>
-                <div id="ci" class="card">
-                    <h5>AWS Infrastructure Deployment with Terraform<span class="cardHint"></span></h5>
-                    <div class="cardLayer">
-                        <p>Description: Successfully deployed AWS infrastructure using Terraform, including VPC, public subnet, Internet Gateway,
-                            route table, security group, and an Apache EC2 instance, demonstrating proficiency in cloud infrastructure management.</p>
-                        <a title="Source code" class="src" href="https://github.com/MohamedSamir445/AWS-infrastructure-using-Terraform.git" target="_blank"><strong>source</strong></a>
-                    </div>
+                <a title="Source code" class="src" href="https://github.com/MohamedSamir445/Cafe-App.git" target="_blank"><strong>source</strong></a>
+            </div>
+            
+            <div class="card">
+                <h5>AWS Infrastructure Deployment with Terraform</h5>
+                <div class="cardLayer">
+                    <p>Successfully deployed AWS infrastructure using Terraform, including VPC, public subnet, Internet Gateway, route table, security group, and an Apache EC2 instance, demonstrating proficiency in cloud infrastructure management.</p>
                 </div>
-                <div id="ci" class="card">
-                    <h5>Network Infrastructure Configuration Project<span class="cardHint"></span></h5>
-                    <div class="cardLayer">
-                        <p>Description: Executed comprehensive network setup including basic configuration, routing protocols, VLAN routing, port
-                            security, spanning tree protocol, DHCP setup, access control, and PATing for enhanced network</p>
-                        <a title="Source code" class="src" href="https://github.com/MohamedSamir445/KastenOps" target="_blank"><strong>source</strong></a>
-                    </div>
+                <a title="Source code" class="src" href="https://github.com/MohamedSamir445/AWS-infrastructure-using-Terraform.git" target="_blank"><strong>source</strong></a>
+            </div>
+            
+            <div class="card">
+                <h5>Network Infrastructure Configuration Project</h5>
+                <div class="cardLayer">
+                    <p>Executed comprehensive network setup including basic configuration, routing protocols, VLAN routing, port security, spanning tree protocol, DHCP setup, access control, and PATing for enhanced network</p>
                 </div>
-                <div id="ci" class="card">
-                    <h5>MCSA Certified: <span class="cardHint">Proficient in Windows Server Administration</span></h5>
-                    <div class="cardLayer">
-                        <p>Description: Completed MCSA course with proficiency in Windows Server administration, mastering key skills including website
-                            deployment, DNS management, DHCP administration, and group policy objects.</p>
-                        <a title="Source code" class="src" href="https://www.linkedin.com/feed/update/urn:li:activity:7147128895006314497/" target="_blank"><strong>source</strong></a>
-                    </div>
+                <a title="Source code" class="src" href="https://github.com/MohamedSamir445/KastenOps" target="_blank"><strong>source</strong></a>
+            </div>
+            
+            <div class="card">
+                <h5>MCSA Certified: <span>Proficient in Windows Server Administration</span></h5>
+                <div class="cardLayer">
+                    <p>Completed MCSA course with proficiency in Windows Server administration, mastering key skills including website deployment, DNS management, DHCP administration, and group policy objects.</p>
                 </div>
-                <div id="ci" class="card">
-                    <h5>ArgoCD on Minikube<span class="cardHint"></span></h5>
-                    <div class="cardLayer">
-                        <p>Description: Automate the deployment of ArgoCD on Minikube with ease, simplifying Kubernetes application
-                            deployment in local development environments.
-                            </p>
-                        <a title="Source code" class="src" href="https://github.com/MohamedSamir445/Minikube-ArgoCD-Deployer" target="_blank"><strong>source</strong></a>
-                    </div>
+                <a title="Source code" class="src" href="https://www.linkedin.com/feed/update/urn:li:activity:7147128895006314497/" target="_blank"><strong>source</strong></a>
+            </div>
+            
+            <div class="card">
+                <h5>ArgoCD on Minikube</h5>
+                <div class="cardLayer">
+                    <p>Automate the deployment of ArgoCD on Minikube with ease, simplifying Kubernetes application deployment in local development environments.</p>
                 </div>
-                <div id="ci" class="card">
-                    <h5>Automated Deployment Pipeline <span class="cardHint">with AWS, Jenkins, Docker, and Ansible</span></h5>
-                    <div class="cardLayer">
-                        <p>Description: Developed an automated deployment pipeline leveraging AWS infrastructure and DevOps tools like Jenkins,
-                            Docker, and Ansible, streamlining the deployment process for web projects</p>
-                        <a title="Source code" class="src" href="https://github.com/MohamedSamir445/-Automated-Deployment-Pipeline-with-AWS-Jenkins-Docker-and-Ansible.git" target="_blank"><strong>source</strong></a>
-                    </div>
+                <a title="Source code" class="src" href="https://github.com/MohamedSamir445/Minikube-ArgoCD-Deployer" target="_blank"><strong>source</strong></a>
+            </div>
+            
+            <div class="card">
+                <h5>Automated Deployment Pipeline <span>with AWS, Jenkins, Docker, and Ansible</span></h5>
+                <div class="cardLayer">
+                    <p>Developed an automated deployment pipeline leveraging AWS infrastructure and DevOps tools like Jenkins, Docker, and Ansible, streamlining the deployment process for web projects</p>
                 </div>
-                <div id="ci" class="card">
-                    <h5>End-to-End CI/CD Pipeline <span class="cardHint">Implementation on Azure</span></h5>
-                    <div class="cardLayer">
-                        <p>Implemented a comprehensive CI/CD pipeline using Azure DevOps, Jenkins, and Docker, enabling automated building,
-                            testing, and deployment of containerized applications to Azure Web Apps via Azure Container Registry</p>
-                        <a title="Source code" class="src" href="https://github.com/MohamedSamir445/Tetris-Game-App.git" target="_blank"><strong>source</strong></a>
-                    </div>
+                <a title="Source code" class="src" href="https://github.com/MohamedSamir445/-Automated-Deployment-Pipeline-with-AWS-Jenkins-Docker-and-Ansible.git" target="_blank"><strong>source</strong></a>
+            </div>
+            
+            <div class="card">
+                <h5>End-to-End CI/CD Pipeline <span>Implementation on Azure</span></h5>
+                <div class="cardLayer">
+                    <p>Implemented a comprehensive CI/CD pipeline using Azure DevOps, Jenkins, and Docker, enabling automated building, testing, and deployment of containerized applications to Azure Web Apps via Azure Container Registry</p>
                 </div>
+                <a title="Source code" class="src" href="https://github.com/MohamedSamir445/Tetris-Game-App.git" target="_blank"><strong>source</strong></a>
             </div>
         </div>
     </section>

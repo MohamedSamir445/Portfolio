@@ -69,8 +69,10 @@ var type = new Typed(".changing_text", {
 	backSpeed: 20,
 	backDelay: 1400,
 	loop: true,
-	cursorChar: "_",
+	cursorBlink: false,
+	cursorChar: '<span style="font-size: 2.5em; animation: blink 0.8s infinite;">|</span>',
 });
+
 
 // Function to add skills to the DOM
 function addSkillsToDOM() {
@@ -98,3 +100,42 @@ function addSkillsToDOM() {
 
 // Call the function when the DOM is fully loaded
 document.addEventListener('DOMContentLoaded', addSkillsToDOM);
+
+// Mobile menu functionality
+const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
+const mobileMenu = document.querySelector('.mobile-menu');
+const mobileMenuBackdrop = document.querySelector('.mobile-menu-backdrop');
+const body = document.body;
+
+function toggleMobileMenu() {
+    body.classList.toggle('mobile-menu-open');
+    
+    if (body.classList.contains('mobile-menu-open')) {
+        // Delay the appearance of menu items
+        document.querySelectorAll('.mobile-menu ul li').forEach((item, index) => {
+            setTimeout(() => {
+                item.style.transitionDelay = `${index * 0.1}s`;
+                item.style.opacity = '1';
+                item.style.transform = 'translateX(0)';
+            }, 300); // Start after the menu slide-in animation
+        });
+    } else {
+        // Reset menu items
+        document.querySelectorAll('.mobile-menu ul li').forEach((item) => {
+            item.style.transitionDelay = '0s';
+            item.style.opacity = '0';
+            item.style.transform = 'translateX(20px)';
+        });
+    }
+}
+
+mobileMenuToggle.addEventListener('click', toggleMobileMenu);
+mobileMenuBackdrop.addEventListener('click', toggleMobileMenu);
+
+// Close mobile menu when a link is clicked
+const mobileMenuLinks = document.querySelectorAll('.mobile-menu a');
+mobileMenuLinks.forEach(link => {
+    link.addEventListener('click', () => {
+        toggleMobileMenu();
+    });
+});
