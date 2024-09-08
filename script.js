@@ -53,7 +53,9 @@ const skills = [
 	{ name: "Networking", level: 75 },
 	{ name: "Monitoring", level: 80 },
 	{ name: "CI/CD", level: 80 },
-	{ name: "helm", level: 90 }
+	{ name: "helm", level: 90 },
+    { name: "Engilsh", level: 80 },
+	{ name: "Problem Solving", level: 65 }
 ];
 
 // TYPING TEXT 
