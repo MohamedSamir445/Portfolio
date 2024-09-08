@@ -607,3 +607,62 @@ footer {
         display: block;
     }
 }
+
+/* General styles for mobile */
+@media (max-width: 768px) {
+    header {
+        padding: 15px 10px; /* Adjust padding for mobile */
+    }
+
+    .navigation ul {
+        flex-direction: column; /* Stack navigation items vertically */
+        align-items: center; /* Center align items */
+    }
+
+    .navigation ul li {
+        margin: 10px 0; /* Add margin for spacing */
+    }
+
+    .main {
+        padding: 40px 20px; /* Adjust padding for main section */
+        text-align: center; /* Center text */
+    }
+
+    .my_work_btn a, .my_resume a {
+        padding: 10px 20px; /* Adjust button padding */
+        font-size: 1em; /* Adjust font size */
+    }
+
+    .projects .content, .certificates-content {
+        flex-direction: column; /* Stack cards vertically */
+        align-items: center; /* Center align cards */
+    }
+
+    .card, .certificate {
+        width: 90%; /* Make cards full width on mobile */
+        margin-bottom: 20px; /* Add margin between cards */
+        text-align: center; /* Center text in cards */
+    }
+
+    .card h5, .certificate h5 {
+        font-size: 1.5em; /* Adjust heading size */
+    }
+
+    .cardLayer p {
+        font-size: 0.9em; /* Adjust paragraph size */
+    }
+
+    .social_icons {
+        flex-direction: column; /* Stack social icons vertically */
+        align-items: center; /* Center align icons */
+    }
+
+    .social_icons a {
+        font-size: 1.5em; /* Adjust icon size */
+        margin: 5px 0; /* Add margin for spacing */
+    }
+
+    footer {
+        padding: 15px 0; /* Adjust footer padding */
+    }
+}
