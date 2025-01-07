@@ -747,3 +747,24 @@ html {
     scroll-behavior: smooth; /* Enables smooth scrolling */
 }
 
+@media (max-width: 768px) {
+    .work-experience .content {
+        flex-direction: column; /* Stack cards vertically */
+        align-items: center; /* Center align cards */
+    }
+
+    .work-experience .card {
+        width: 90%; /* Make cards full width on mobile */
+        margin-bottom: 20px; /* Add margin between cards */
+        text-align: center; /* Center text in cards */
+    }
+
+    .work-experience .card h5 {
+        font-size: 1.5em; /* Adjust heading size */
+    }
+
+    .work-experience .cardLayer p {
+        font-size: 0.9em; /* Adjust paragraph size */
+    }
+}
+
