@@ -138,6 +138,12 @@ mobileMenuBackdrop.addEventListener('click', toggleMobileMenu);
 const mobileMenuLinks = document.querySelectorAll('.mobile-menu a');
 mobileMenuLinks.forEach(link => {
     link.addEventListener('click', () => {
-        toggleMobileMenu();
+        toggleMobileMenu(); // Close the mobile menu
+        // Smooth scroll to the section
+        const targetId = link.getAttribute('href');
+        const targetSection = document.querySelector(targetId);
+        if (targetSection) {
+            targetSection.scrollIntoView({ behavior: 'smooth' });
+        }
     });
 });
